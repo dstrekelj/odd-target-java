@@ -30,12 +30,8 @@ class JavaContext
         canvas.setMinimumSize(size);
         canvas.setMaximumSize(size);
         
-        // Declared in body because hxjava mangles class property names
-        var bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        this.bufferedImage = bufferedImage;
-        
-        var dataBufferInt : java.awt.image.DataBufferInt = untyped __java__("(java.awt.image.DataBufferInt)bufferedImage.getRaster().getDataBuffer()");
-        trace(dataBufferInt.getData().length);
+        bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        var dataBufferInt = cast(bufferedImage.getRaster().getDataBuffer(), java.awt.image.DataBufferInt);
         framebuffer = new Framebuffer(width, height, dataBufferInt.getData());
         
         var frame = new JFrame();
