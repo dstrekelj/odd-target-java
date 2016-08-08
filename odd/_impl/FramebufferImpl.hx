@@ -1,9 +1,8 @@
-package odd;
+package odd._impl;
 
-/**
- * Java-specific framebuffer.
- */
-class Framebuffer
+import odd.Framebuffer;
+
+class FramebufferImpl implements Framebuffer
 {
     public var width(default, null) : Int;
     public var height(default, null) : Int;

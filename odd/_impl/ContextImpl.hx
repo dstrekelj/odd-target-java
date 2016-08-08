@@ -11,7 +11,7 @@ import odd.Framebuffer;
 @:allow(odd.Context)
 class ContextImpl
 {
-    private var framebuffer : Framebuffer;
+    private var framebuffer : FramebufferImpl;
     
     private var bufferedImage : BufferedImage;
     private var canvas : Canvas;
@@ -31,7 +31,7 @@ class ContextImpl
         
         bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         var dataBufferInt = cast(bufferedImage.getRaster().getDataBuffer(), java.awt.image.DataBufferInt);
-        framebuffer = new Framebuffer(width, height, dataBufferInt.getData());
+        framebuffer = new FramebufferImpl(width, height, dataBufferInt.getData());
         
         var frame = new JFrame();
         frame.add(canvas);
