@@ -1,7 +1,5 @@
 package odd;
 
-import odd._target.JavaContext;
-
 /**
  * Java-specific framebuffer.
  */

@@ -1,16 +1,15 @@
-package odd._target;
+package odd._impl;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.awt.image.BufferStrategy;
-import java.awt.image.DataBufferByte;
+import java.awt.image.BufferedImage;
 import java.javax.swing.JFrame;
 import odd.Framebuffer;
-import odd._target.JavaContext;
 
-class JavaContext
+@:allow(odd.Context)
+class ContextImpl
 {
     private var framebuffer : Framebuffer;
     
