@@ -1,5 +1,6 @@
 package odd._impl;
 
+import haxe.Timer;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -17,10 +18,18 @@ class ContextImpl
     private var canvas : Canvas;
     private var bufferStrategy : BufferStrategy;
     private var graphics : Graphics;
+    
+    private var timeAccumulator : Float;
+    private var timeNow : Float;
+    private var timeThen : Float;
 
     public function new(width : Int, height : Int) 
     {
         trace("-- odd-target-java --");
+        
+        timeAccumulator = 0;
+        timeNow = Timer.stamp();
+        timeThen = 0;
         
         var size = new Dimension(width, height);
         
@@ -51,7 +60,16 @@ class ContextImpl
     {
         while (true)
         {
-            onUpdate();
+            timeThen = timeNow;
+            timeNow = Timer.stamp();
+            timeAccumulator += (timeNow - timeThen);
+            
+            if (timeAccumulator >= 0.01666667)
+            {
+                onUpdate();
+                timeAccumulator = 0;
+            }
+            
             onDraw(framebuffer);
             draw();
         }
