@@ -1,4 +1,4 @@
-package odd._impl;
+package odd.impl;
 
 import haxe.Timer;
 import java.awt.Canvas;

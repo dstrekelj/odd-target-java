@@ -1,4 +1,4 @@
-package odd._impl;
+package odd.impl;
 
 import odd.Framebuffer;
 
