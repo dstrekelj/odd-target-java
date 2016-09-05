@@ -20,4 +20,6 @@ Include the following libraries in your project:
 ```
 -lib odd
 -lib odd-target-java
+# Your directives go here
+-java out/java/
 ```
