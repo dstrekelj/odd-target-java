@@ -1,8 +1,10 @@
 # odd-target-java
 
-Java Swing target for Odd software renderer project.
+Java Swing target for the [Odd software renderer](https://github.com/dstrekelj/odd) project.
 
 Provides an implementation of the target-specific rendering context and framebuffer.
+
+**Note**, make sure you have JDK 1.7 or greater installed on your computer. 
 
 ## Installation
 
@@ -13,13 +15,20 @@ haxelib git odd https://github.com/dstrekelj/odd.git
 haxelib git odd-target-java https://github.com/dstrekelj/odd-target-java.git
 ```
 
+If you don't have git, do the following:
+
+```
+haxelib dev odd path/to/downloaded/odd/repository
+haxelib dev odd-target-java path/to/downloaded/odd-target-java/repository
+```
+
 ## Usage
 
-Include the following libraries in your project:
+Include the following flags in your project's .hxml file:
 
 ```
 -lib odd
 -lib odd-target-java
-# Your directives go here
+
 -java out/java/
 ```
